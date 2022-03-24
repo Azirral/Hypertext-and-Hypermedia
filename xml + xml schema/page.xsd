@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:element name="hobby">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="mainImage" type="imageType"/>
+				<xs:element name="historicalReanactment" type="reanactmentType"/>
+				<xs:element name="credentials" type="credentialsType"/>
+				<xs:element name="quote">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="9"/>
+							<xs:maxLength value="19"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="credentialsType">
+		<xs:sequence>
+			<xs:element name="contact" default="Adam Sobczuk 5yearsinhistoricalreanactment">
+				<xs:simpleType>
+					<xs:restriction>
+						<xs:simpleType>
+							<xs:list>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="29"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:list>
+						</xs:simpleType>
+						<xs:length value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="reanactmentType">
+		<xs:sequence>
+			<xs:element name="information" type="informationType"/>
+			<xs:element name="literature" type="literatureType"/>
+			<xs:element name="groups" type="groupsType"/>
+			<xs:element name="gallery" type="galleryType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="informationType">
+		<xs:sequence>
+			<xs:element name="topic" type="topicType"/>
+			<xs:element name="explanation" type="explanationType"/>
+			<xs:element name="renaissance" type="renaissanceType"/>
+			<xs:element name="middleAges" type="middleAgesType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="explanationType">
+		<xs:sequence>
+			<xs:group ref="themetextGroup"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:group name="themetextGroup">
+		<xs:sequence>
+			<xs:element name="theme" type="xs:string"/>
+			<xs:element name="text" type="textType"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="textType">
+		<xs:sequence>
+			<xs:element name="textPortion" minOccurs="0" maxOccurs="5">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="id" type="textProperties"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="renaissanceType">
+		<xs:sequence>
+			<xs:group ref="themetextGroup"/>
+			<xs:element name="image" type="imageType"/> 
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="middleAgesType">
+		<xs:sequence>
+			<xs:group ref="themetextGroup"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="literatureType">
+		<xs:sequence>
+			<xs:element name="topic" type="topicType"/>
+			<xs:element ref="link" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="link" type="linkType"/>
+	<xs:attribute name="definition">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="general"/>
+				<xs:enumeration value="classical"/>
+				<xs:enumeration value="darkAges"/>
+				<xs:enumeration value="regencyBritish"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:complexType name="groupsType">
+		<xs:sequence>
+			<xs:element name="topic" type="topicType"/>
+			<xs:element name="theme" type="xs:string"/>
+			<xs:element name="centuries">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="XVI" type="centuryType"/>
+						<xs:element name="XVII" type="centuryType"/>
+						<xs:element name="XIII" type="centuryType"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="topicType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="kind" type="kindType"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="centuryType">
+		<xs:choice>
+			<xs:element name="group" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="infantry" type="infantryType"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="association" minOccurs="0" type="xs:string"/>
+		</xs:choice>
+		<xs:attribute name="age" type="xs:byte"/>
+	</xs:complexType>
+	<xs:complexType name="galleryType" mixed="true">
+		<xs:sequence>
+			<xs:element name="topic" type="topicType"/>
+			<xs:element name="image" minOccurs="0" maxOccurs="unbounded" type="imageType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="linkType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="definition" use="required"/>
+				<xs:attribute name="source" type="xs:anyURI"/>		
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="imageType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="source" type="xs:anyURI"/>
+				<xs:attribute name="historicallyaccurate" type="haType" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="haType">
+		<xs:restriction base="xs:boolean">
+			<xs:pattern value="true|false"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="infantryType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="6"/>
+			<xs:maxLength value="8"/>
+			<xs:pattern value="polish|westerly"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="kindType">
+		<xs:restriction base="xs:string">
+			<xs:length value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="idType">
+		<xs:restriction base="xs:byte">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="contentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="4"/>
+			<xs:maxLength value="18"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="textProperties">
+		<xs:union memberTypes="idType contentType"/>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,98 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical reanactment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <img src="manuscript.jpg" alt="manuscript" />
+        </header>
+        <nav>
+            <ul>
+                <li class="menu"><a href="mainpage.html">About</a></li>
+                <li class="menu dropdown">
+                    <a class="dropbtn">To read</a>
+                    <ul class="dropdown-content">
+                        <li class="submenu"><a target="_blank" href="https://en.wikipedia.org/wiki/Historical_reenactment">1.Link</a></li>
+                        <li class="submenu"><a target="_blank" href="https://en.wikipedia.org/wiki/Classical_reenactment">2.link</a></li>
+                        <li class="submenu"><a target="_blank" href="https://en.wikipedia.org/wiki/Dark_Ages_reenactment">3.link</a></li>
+                    </ul>
+                </li>
+                <li class="menu"><a href="groups.html">Groups</a></li>
+                <li class="menu active"><a href="survey.html">Survey</a></li>
+                <li class="menu"><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+        <section>
+            <h1>Survey!</h1>
+            <form id="form">
+                <div class="form-control">
+                    <label for="name" id="label-name">Name:</label>
+                    <input type="text" id="name" placeholder="Enter your name" />
+                </div>
+                <div class="form-control">
+                    <label for="surname" id="label-surname">Surname:</label>
+                    <input type="text" id="surname" placeholder="Enter your surname" />
+                </div>
+                <div class="form-control">
+                    <label for="email" id="label-email">Email:</label>
+                    <input type="text" id="email" placeholder="Enter your email" />
+                </div>
+                <div class="form-control">
+                    <label>Gender: </label>
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="male" value="male" checked />
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="female" value="female" />
+                </div>
+                <div class="form-control">
+                    Favourite centuries:
+                    <input type="checkbox" name="VII" value="VII" />VII
+                    <input type="checkbox" name="VIII" value="VIII" />VIII
+                    <input type="checkbox" name="IX" value="IX" />IX
+                    <input type="checkbox" name="XI" value="XI" />XI
+                    <input type="checkbox" name="XII" value="XII" />XII
+                    <input type="checkbox" name="XIII" value="XIII" />XIII
+                    <input type="checkbox" name="XIV" value="XIV" />XIV
+                    <input type="checkbox" name="XV" value="XV" />XV
+                    <input type="checkbox" name="XVI" value="XVI" />XVI
+                    <input type="checkbox" name="XVII" value="XVII" />XVII
+                    <input type="checkbox" name="XVIII" value="XVIII" />XVIII
+                    <input type="checkbox" name="XIX" value="XIX" />XIX
+                    <input type="checkbox" name="XX" value="XX" />XX
+                    <input type="checkbox" name="XI" value="XI" />XI
+                </div>
+                <div class="form-control">
+                    What is your favourite medieval class?
+                    <select>
+                        <option value="archer">archer</option>
+                        <option value="knight">knight</option>
+                        <option value="bard">bard</option>
+                        <option value="commoner">commoner</option>
+                        <option value="town dweller">town dweller</option>
+                        <option value="priest">priest</option>
+                        <option value="merchant">merchant</option>
+                        <option value="artisan">artisan</option>
+                        <option value="royal blood">royal blood</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    How the page could be improved (comment here:)
+                    <textarea name="Comments" cols="60" rows="6" placeholder="Enter your comments"></textarea>
+                </div>
+                <button type="submit" value="submit">
+                    Submit
+                </button>
+                <button type="reset">Reset the form</button>
+            </form>
+        </section>
+        <footer>
+            Per Aspera Ad Astra
+        </footer>
+    </div>
+</body>
+</html>

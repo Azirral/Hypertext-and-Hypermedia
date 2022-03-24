@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE hobby [
+	<!ELEMENT hobby (mainImage, historicalReanactment, credentials, quote)>
+	<!ELEMENT mainImage (#PCDATA)>
+	<!ATTLIST mainImage source CDATA #REQUIRED>
+	<!ELEMENT historicalReanactment (information, literature, groups, gallery)>
+	<!ELEMENT information (topic, explanation, renaissance, middleAges)>
+	<!ELEMENT topic (#PCDATA)>
+	<!ATTLIST topic kind CDATA #REQUIRED>
+	<!ELEMENT explanation (theme, text)>
+	<!ELEMENT theme (#PCDATA)>
+	<!ELEMENT text (textPortion+)>
+	<!ELEMENT textPortion (#PCDATA)>
+	<!ATTLIST textPortion id CDATA "1definition">
+	<!ELEMENT renaissance (theme, text, image)>
+	<!ELEMENT middleAges (theme, text)>
+	<!ELEMENT literature (topic, link+)>
+	<!ELEMENT link (#PCDATA)>
+	<!ATTLIST link source CDATA #REQUIRED>
+	<!ATTLIST link definition (general|classical|darkAges) #REQUIRED>
+	<!ELEMENT groups (topic, theme, centuries)>
+	<!ELEMENT centuries (XVII, XVI, XIII)>
+	<!ELEMENT XVII (group+|association)>
+	<!ATTLIST XVII age (17|16|13) #REQUIRED >
+	<!ELEMENT XVI (group+|association)>
+	<!ATTLIST XVI age (17|16|13) #REQUIRED >
+	<!ELEMENT XIII (group+|association)>
+	<!ATTLIST XIII age (17|16|13) #REQUIRED >
+	<!ELEMENT group (#PCDATA)>
+	<!ATTLIST group infantry (polish|westerly) #REQUIRED>
+	<!ELEMENT association (#PCDATA)>
+	<!ELEMENT gallery (#PCDATA|topic|image)*>
+	<!ELEMENT image (#PCDATA)>
+	<!ATTLIST image source CDATA #REQUIRED>
+	<!ATTLIST image historicallyaccurate (false|true) #IMPLIED>
+	<!ELEMENT credentials (contact)>
+	<!ELEMENT contact (#PCDATA)>
+	<!ELEMENT quote (#PCDATA)>
+]>
+<hobby>
+	<mainImage source="manuscript.jpg">manuscript</mainImage>	
+	<historicalReanactment>
+		<information>
+			<topic kind="menu">About</topic>
+			<explanation>
+				<theme>Historical Reenactment - what it really is?</theme>
+				<text>
+					<textPortion id="1definition">
+						Historical reenactment (or re-enactment) is an educational or recreational activity in which primarily amateur hobbyists and history enthusiasts
+						dress up in uniforms and follow a script to reproduce features of a historical event or period.
+						This can be as particular as a single war scene, such as the reenactment of Pickett's Charge at the 1913 Great Reunion,
+						or as broad as an entire time, such as Regency reenactment.
+					</textPortion>
+					<textPortion id="2hobbisticApproach">
+						While most historical reenactors are volunteers, others are members of the armed services or historians.
+						The reenactors, or participants, frequently conduct study on the equipment, uniforms, and other things they will carry or utilize.
+						Reenactors either buy or make their own clothing and accessories from specialty retailers.
+						Historical reenactments span the centuries, from the Roman Empire to major global wars and the twentieth-century Korean War.
+					</textPortion>
+				</text>
+			</explanation>
+			<renaissance>
+				<theme>Renaissance reenactment (my period)</theme>
+				<text>
+					<textPortion id="3definition">
+						Historical reenactment of events from the Renaissance period and the European Age of Exploration is known as Renaissance reenactment.
+						Its largest definition includes period reenactment from the early 15th century to the mid-18th century.
+						Medieval reenactment refers to reenactments of earlier events, whilst modern replication refers to reenactments of more recent events.
+						The English Civil War in the United Kingdom, the Eighty Years' War in the Low Countries (especially the Netherlands),
+						L'Escalade in Switzerland, and the Polish–Lithuanian Commonwealth in eastern Europe are all examples of Renaissance recreation.
+					</textPortion>
+				</text>
+				<image source="musketeers.jpeg">musketeers</image>
+			</renaissance>
+			<middleAges>
+				<theme>Medieval Reenactment</theme>
+				<text>
+					<textPortion id="4definition">
+						Medieval recreation is a type of historical reenactment that focuses on the time from the fall of Rome to the end of the 15th century.
+						The Middle Ages refers to the second half of this time period.
+						The range of additional terminology used for the period adds to the complexity of terms.
+					</textPortion>
+					<textPortion id="5eras">
+						Western European historians refer to this period as the Migration Period or the Dark Ages, whereas German historians refer to it as Völkerwanderung ("wandering of the peoples").
+						The 5th and 6th centuries are commonly referred to by this title.
+						Early medieval is a term used by reenactors who recreate the following period of history, which spans the 7th through 11th century.
+						High medieval refers to the 12th to 14th centuries, whereas Late medieval refers to the 15th century.
+					</textPortion>
+					<textPortion id="6span">
+						Because there are so many eras to choose from, most medieval reenactment groups concentrate on a narrower time period,
+						perhaps focusing on a certain century, decade, series of battles, or monarch, depending on how genuine the recreation and encampment is meant to be.
+					</textPortion>
+					<textPortion id="7activities">
+						Living history groups and reenactors who specialize in the Middle Ages focus on reenacting civilian and military life during that time period. In Eastern Europe, it is extremely popular.
+						The reenactor's and their group's purpose is to create an authentic portrayal of a person who may have existed in a certain place at a specific time while being approachable to the general audience.
+						Authentic camping, cooking, performing historical skills and trades, and playing historical musical instruments or board games are all examples of living history activities.
+					</textPortion>
+					<textPortion id="8battling">
+						The main goal of this type of reenactment is to re-enact historical conflicts or combat strategies.
+						The variations range from historical dueling practice (typically with an appropriate period weapon such as an arming sword or rapier,
+						as well as wrestling as a martial art) to reenactment of actual or mythical medieval wars.
+					</textPortion>
+				</text>
+			</middleAges>
+		</information>
+		<literature>
+			<topic kind="menu">To read</topic>
+			<link source="https://en.wikipedia.org/wiki/Historical_reenactment" definition="general">Link</link>
+			<link source="https://en.wikipedia.org/wiki/Classical_reenactment" definition="classical">Link</link>
+			<link source="https://en.wikipedia.org/wiki/Dark_Ages_reenactment" definition="darkAges">Link</link>
+		</literature>
+		<groups>
+			<topic kind="menu">Groups</topic>
+			<theme>Here is a table of some of the reconstruction groups I had the pleasure to battle with</theme>
+			<centuries>
+				<XVII age="17">
+					<group infantry="polish">Zamojska Grupa Rekonstrukcji Historycznej imienia Jana Sobiepana Zamoyskiego</group>
+					<group infantry="polish">Kompania Dragonow Pana Zebrzydowskiego</group>
+					<group infantry="polish">Malopolska zgraja sarmacka</group>
+					<group infantry="westerly">Korpus Artylerii zamku Tenczyn</group>
+					<group infantry="westerly">Nadworna Choragiew Dragonska Imci p. Zygmunta z Pleszowic Fredra</group>
+					<group infantry="polish">Polish Haiduking Team</group>
+					<group infantry="westerly">Rebel Regiment</group>
+					<group infantry="polish">Fraternitas Egocentricorum Lublinensis "AVE MY"</group>
+					<group infantry="polish">Zaciag prywatny straznika koronnego Samuela Laszcza</group>
+					<group infantry="westerly">Kompania Kaperska</group>
+					<group infantry="polish">Brac Herbowa Ziemi Rawskiej</group>
+					<group infantry="polish">Swawolna Jednostka Wspierajaca sw Jerzy</group>
+					<group infantry="polish">Kompania Wspierajaca Ziemi Malopolskiej</group>
+					<group infantry="polish">Pulk Czarneckiego</group>
+					<group infantry="polish">Choragiew Jakuba Wejhera</group>
+					<group infantry="polish">Strzelcow Rota Wojewody Sieradzkiego Hieronima Wierzbowskiego</group>
+					<group infantry="westerly">Parva Armis</group>
+					<group infantry="polish">Towarzystwo Szabli i Miecza</group>
+				</XVII>
+				<XVI age="16">
+					<group infantry="westerly">Zaloga i Mieszkancy Twierdzy Wisloujscie</group>
+					<group infantry="westerly">Malleus Maleficarum</group>
+				</XVI>
+				<XIII age="13">
+					<group  infantry="polish">Towarzystwo Szabli i Miecza</group>
+				</XIII>
+			</centuries>
+		</groups>
+		<gallery>
+			<topic kind="menu">Gallery</topic>
+			Here are some of the photos from historical venues I took part in
+			<image source="img1.jpg" historicallyaccurate="false">Three men in costumes</image>
+			<image source="img2.jpeg" historicallyaccurate="true">Siblings in I World War outfits</image>
+			<image source="img3.jpeg" historicallyaccurate="false">Two men in 17th century outfits</image>
+			<image source="img4.jpeg" historicallyaccurate="true">Man in camp</image>
+			<image source="img5.jpg" historicallyaccurate="true">Musketeer</image>
+			<image source="img6.jpg" historicallyaccurate="true">A march of soldiers</image>
+			<image source="img7.jpg" historicallyaccurate="true">Salvo</image>
+			<image source="img8.jpg" historicallyaccurate="true">Men presenting muskets</image>
+			<image source="img9.jpg" historicallyaccurate="false">Salvo</image>
+			<image source="img10.jpg" historicallyaccurate="true">Salvo</image>
+			<image source="img11.jpg" historicallyaccurate="true">Loading firearms</image>
+			<image source="img12.jpg" historicallyaccurate="true">Smoking fuse</image>
+			<image source="img13.jpg" historicallyaccurate="true">Battle</image>
+			<image source="img14.jpg" historicallyaccurate="true">Man with two muskets</image>
+			<image source="img15.jpg" historicallyaccurate="false">Nobility</image>
+			<image source="img16.jpg" historicallyaccurate="false">Historical show for the kids</image>
+			<image source="img17.jpg" historicallyaccurate="true">Preparing for war</image>
+		</gallery>
+	</historicalReanactment>
+	<credentials>
+		<contact>Adam Sobczuk 5YearsInHistoricalReanactment</contact>
+	</credentials>
+	<quote>Per Aspera Ad Astra</quote>
+</hobby>
